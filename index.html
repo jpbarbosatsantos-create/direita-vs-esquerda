@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Direita vs Esquerda 3.0</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🥊 DIREITA VS ESQUERDA 🥊</h1>
+        <p>O confronto começa agora!</p>
+    </header>
+
+    <main>
+
+        <div class="game-board" id="arena">
+
+            <!-- PLACAR -->
+
+            <div class="placar">
+
+                <div class="painel-jogador">
+                    <h3>JOGADOR 1</h3>
+
+                    <div class="vida">
+                        <div class="vida-jogador" id="vida1"></div>
+                    </div>
+
+                    <p id="vitorias1">Rounds: 0</p>
+                </div>
+
+                <div class="centro-placar">
+                    <div id="tempo">60</div>
+                    <p id="round">ROUND 1</p>
+                </div>
+
+                <div class="painel-jogador">
+                    <h3>JOGADOR 2</h3>
+
+                    <div class="vida">
+                        <div class="vida-jogador" id="vida2"></div>
+                    </div>
+
+                    <p id="vitorias2">Rounds: 0</p>
+                </div>
+
+            </div>
+
+            <!-- PERSONAGENS -->
+
+            <img
+    src="lutador1.png"
+    class="lutador lutador1"
+    alt="Jogador 1"
+>
+
+<img
+    src="lutador2.png"
+    class="lutador lutador2"
+    alt="Jogador 2"
+>
+            <!-- MENSAGENS -->
+
+            <div id="mensagem"></div>
+
+            <button id="reiniciar" onclick="reiniciarJogo()">
+                🔄 REINICIAR JOGO
+            </button>
+
+        </div>
+
+        <!-- CONTROLES -->
+
+        <section class="controles">
+
+            <div class="controle-jogador">
+
+                <h2>🎮 JOGADOR 1</h2>
+
+                <p>A / D — Movimentar</p>
+                <p>W — Pular</p>
+                <p>S — Defender</p>
+                <p>F — Socar</p>
+                <p>G — Chutar</p>
+                <p>H — Soco forte</p>
+                <p>J — Chute especial</p>
+
+            </div>
+
+            <div class="controle-jogador">
+
+                <h2>🎮 JOGADOR 2</h2>
+
+                <p>← / → — Movimentar</p>
+                <p>↑ — Pular</p>
+                <p>↓ — Defender</p>
+                <p>K — Socar</p>
+                <p>L — Chutar</p>
+                <p>O — Soco forte</p>
+                <p>P — Chute especial</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Direita vs Esquerda — Projeto de Desenvolvimento de Sistemas</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,307 @@
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #10121c;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* CABEÇALHO */
+
+header {
+    padding: 20px;
+}
+
+h1 {
+    color: #ffcc00;
+    font-size: 36px;
+    text-shadow: 3px 3px 5px black;
+}
+
+header p {
+    margin-top: 8px;
+    color: #ccc;
+}
+
+/* ARENA */
+
+.game-board {
+    width: 95%;
+    max-width: 1000px;
+    height: 500px;
+
+    margin: 20px auto;
+
+    position: relative;
+    overflow: hidden;
+
+    border: 5px solid #333;
+    border-bottom: 20px solid #444;
+
+    background: linear-gradient(
+        #26365c 0%,
+        #5376a5 55%,
+        #a9a9a9 56%,
+        #555 100%
+    );
+}
+
+/* PLACAR */
+
+.placar {
+    position: absolute;
+    top: 10px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    z-index: 10;
+}
+
+.painel-jogador {
+    width: 35%;
+}
+
+.painel-jogador h3 {
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 3px black;
+}
+
+/* BARRAS DE VIDA */
+
+.vida {
+    width: 100%;
+    height: 25px;
+
+    border: 3px solid black;
+    background: #600;
+
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.vida-jogador {
+    width: 100%;
+    height: 100%;
+
+    background: #00dd44;
+
+    transition: width 0.2s;
+}
+
+#vida2 {
+    margin-left: auto;
+}
+
+/* CRONÔMETRO */
+
+.centro-placar {
+    background: #111;
+
+    padding: 10px 20px;
+
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+}
+
+#tempo {
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+#round {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* PERSONAGENS */
+
+.lutador {
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    bottom: 0;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    image-rendering: pixelated;
+
+    user-select: none;
+    pointer-events: none;
+
+    transform-origin: center bottom;
+}
+
+.lutador1 {
+    left: 100px;
+}
+
+.lutador2 {
+    left: 650px;
+    transform: scaleX(-1);
+}
+
+/* ANIMAÇÕES */
+
+.atacando {
+    filter: brightness(1.3);
+}
+
+.defendendo {
+    filter: drop-shadow(0 0 12px cyan);
+}
+
+.recebeu-dano {
+    animation: impacto 0.2s ease;
+}
+
+@keyframes impacto {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(3) sepia(1) saturate(8);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+/* MENSAGEM DE VITÓRIA */
+
+#mensagem {
+    position: absolute;
+
+    top: 40%;
+    left: 0;
+
+    width: 100%;
+
+    font-size: 36px;
+    font-weight: bold;
+
+    color: #ffcc00;
+
+    text-shadow: 3px 3px 5px black;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+/* BOTÃO */
+
+#reiniciar {
+    position: absolute;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #ffcc00;
+    color: black;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    z-index: 30;
+}
+
+#reiniciar:hover {
+    background: orange;
+}
+
+/* CONTROLES */
+
+.controles {
+    display: flex;
+    justify-content: center;
+
+    gap: 40px;
+    margin: 30px auto;
+
+    flex-wrap: wrap;
+}
+
+.controle-jogador {
+    background: #202538;
+
+    padding: 25px 40px;
+
+    border-radius: 12px;
+    border: 2px solid #444;
+
+    text-align: left;
+}
+
+.controle-jogador h2 {
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.controle-jogador p {
+    margin: 8px 0;
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 20px;
+    color: #aaa;
+}
+
+/* TELAS MENORES */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .game-board {
+        height: 400px;
+    }
+
+    .lutador {
+        width: 150px;
+        height: 170px;
+    }
+
+    .painel-jogador h3 {
+        font-size: 12px;
+    }
+
+    .centro-placar {
+        padding: 5px;
+    }
+
+    #tempo {
+        font-size: 25px;
+    }
+
+    #mensagem {
+        font-size: 24px;
+    }
+}
